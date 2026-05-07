@@ -36,7 +36,7 @@ const projects: Project[] = [
     desc: "Progiciel de gestion intégré (ERP) inspiré de Fahari ERP, avec gestion complète des modules métiers et interface moderne pour entreprises.",
     tags: ["React", "TypeScript", "ERP", "Tailwind"],
     color: "from-orange-500/20 to-red-500/20",
-    url: "https://unifio-design-studio.lovable.app",
+    url: "https://github.com/Bekono7/unifio",
     image: "/unifio-preview.png",
   },
   {
@@ -45,7 +45,7 @@ const projects: Project[] = [
     desc: "Plateforme web complète pour un restaurant diététique : commandes en ligne, création de comptes, gestion des plats et suivi nutritionnel.",
     tags: ["React", "Supabase", "Tailwind"],
     color: "from-green-500/20 to-emerald-500/20",
-    url: "https://nutriharmony.lovable.app",
+    url: "https://github.com/Bekono7/nutriharmony",
     image: "/nutriharmony-preview.png",
   },
   {
@@ -62,7 +62,7 @@ const projects: Project[] = [
     desc: "Interface administrative React pour la gestion d'utilisateurs et la supervision d'une application de gestion financière.",
     tags: ["React", "Admin", "Dashboard"],
     color: "from-yellow-500/20 to-orange-500/20",
-    url: "https://dolicash-admin-hub.lovable.app",
+    url: "https://github.com/Bekono7/dolicash-admin",
     image: "/dolicash-preview.png",
   },
 ];
