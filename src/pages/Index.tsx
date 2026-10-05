@@ -6,10 +6,11 @@ import Skills from "@/components/portfolio/Skills";
 import Projects from "@/components/portfolio/Projects";
 import Contact from "@/components/portfolio/Contact";
 import SiteFooter from "@/components/portfolio/SiteFooter";
+import ScrollToTop from "@/components/portfolio/ScrollToTop";
 
 const Index = () => {
   return (
-    <main className="min-h-screen bg-background pt-16">
+    <main className="min-h-screen bg-background">
       <Navbar />
       <Hero />
       <About />
@@ -18,6 +19,7 @@ const Index = () => {
       <Projects />
       <Contact />
       <SiteFooter />
+      <ScrollToTop />
     </main>
   );
 };

@@ -4,8 +4,9 @@ import { site } from "@/config/site";
 
 const quick = [
   { label: "À propos", href: "#about" },
+  { label: "Parcours", href: "#parcours" },
   { label: "Compétences", href: "#skills" },
-  { label: "Articles", href: "#blog" },
+  { label: "Projets", href: "#projects" },
   { label: "Contact", href: "#contact" },
 ];
 

@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { ArrowDown, Download, FolderKanban, Mail } from "lucide-react";
+import { ArrowDown, Download, FolderKanban, Mail, MapPin } from "lucide-react";
 import { m } from "framer-motion";
 import { fadeInUp, stagger } from "@/components/motion/variants";
 import { site, mailtoCvRequest } from "@/config/site";
@@ -8,7 +8,7 @@ const Hero = () => {
   return (
     <section
       id="hero"
-      className="relative flex min-h-screen items-center justify-center overflow-hidden bg-hero-glow py-20"
+      className="relative flex min-h-screen items-center justify-center overflow-hidden bg-hero-glow pb-20 pt-28"
     >
       <m.div
         aria-hidden
@@ -33,7 +33,18 @@ const Hero = () => {
           >
             <m.p
               variants={fadeInUp}
-              className="mb-4 text-sm font-medium uppercase tracking-[0.25em] text-primary"
+              className="mb-5 inline-flex items-center gap-2 rounded-full border border-emerald-500/30 bg-emerald-500/10 px-3.5 py-1.5 text-xs font-medium text-emerald-700 dark:text-emerald-400"
+            >
+              <span className="relative flex h-2 w-2">
+                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-500 opacity-60" />
+                <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-500" />
+              </span>
+              Disponible pour de nouvelles opportunités
+            </m.p>
+
+            <m.p
+              variants={fadeInUp}
+              className="mb-3 text-sm font-medium uppercase tracking-[0.25em] text-primary"
             >
               {site.title}
             </m.p>
@@ -48,6 +59,17 @@ const Hero = () => {
               <br className="hidden sm:block" />
               Basé à {site.location}.
             </m.p>
+
+            <m.ul variants={fadeInUp} className="mb-8 flex flex-wrap justify-center gap-2 lg:justify-start" aria-label="Technologies principales">
+              {["Django", "React", "Flutter", "PostgreSQL"].map((t) => (
+                <li
+                  key={t}
+                  className="rounded-lg border border-border bg-card/70 px-3 py-1 text-xs font-medium text-muted-foreground backdrop-blur-sm"
+                >
+                  {t}
+                </li>
+              ))}
+            </m.ul>
 
             <m.div variants={fadeInUp} className="flex flex-wrap justify-center gap-4 lg:justify-start">
               <m.div whileHover={{ scale: 1.03, y: -2 }} whileTap={{ scale: 0.98 }}>
@@ -87,15 +109,25 @@ const Hero = () => {
             transition={{ delay: 0.3 }}
             className="order-1 lg:order-2 flex justify-center"
           >
-            <div className="relative h-64 w-64 overflow-hidden rounded-full border-4 border-primary/20 shadow-2xl sm:h-72 sm:w-72 lg:h-80 lg:w-80">
-              <img
-                src="/portrait.jpg"
-                alt={site.fullName}
-                className="h-full w-full object-cover"
-                onError={(e) => {
-                  e.currentTarget.style.display = "none";
-                }}
-              />
+            <div className="relative">
+              <div aria-hidden className="absolute -inset-3 rounded-full bg-gradient-primary opacity-30 blur-2xl" />
+              <div className="relative h-64 w-64 rounded-full bg-gradient-primary p-1 shadow-2xl sm:h-72 sm:w-72 lg:h-80 lg:w-80">
+                <div className="h-full w-full overflow-hidden rounded-full border-4 border-background">
+                  <img
+                    src="/portrait.jpg"
+                    alt={site.fullName}
+                    className="h-full w-full object-cover"
+                    fetchPriority="high"
+                    onError={(e) => {
+                      e.currentTarget.style.display = "none";
+                    }}
+                  />
+                </div>
+              </div>
+              <div className="absolute -bottom-2 left-1/2 flex -translate-x-1/2 items-center gap-1.5 whitespace-nowrap rounded-full border border-border bg-card px-4 py-1.5 text-xs font-medium shadow-lg">
+                <MapPin className="h-3.5 w-3.5 text-primary" />
+                {site.location}
+              </div>
             </div>
           </m.div>
         </div>
